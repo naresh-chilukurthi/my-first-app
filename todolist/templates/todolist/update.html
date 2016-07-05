@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+      {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'css/bootstrap.min.css' %}"></script>
+  <style>
+  body {
+      position: relative;
+  }
+  #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+  #section2 {padding-top:50px;height:500px;color: #fff; background-color: #e4b9c0;}
+  #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+  #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+  </style>
+    <title>Title</title>
+</head>
+<body >
+<div id="section2">
+<h1 align="center"> your todo list</h1>
+   <div class="container">
+  <table class="table table-bordered" border="0">
+
+<form action="" method="post"><tr>{% csrf_token %}</tr>
+    <tr color:black>{{ form.as_table }}</tr>
+    <tr><input type="submit" value="change" /></tr>
+</form>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'css/bootstrap.min.css' %}"></script>
+  <style>
+  body {
+      position: relative;
+  }
+  #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+  #section2 {padding-top:50px;height:500px;color: #fff; background-color: #e4b9c0;}
+  #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+  #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+  </style>
+    <title>Title</title>
+</head>
+<body >
+<div id="section2">
+<h1 align="center"> your todo list</h1>
+   <div class="container">
+  <table class="table table-hover" border="0">
+    <thead>
+      <tr >
+                  <th class="col-sm-3">id</th>
+        <th class="col-sm-3">Creation Date</th>
+          <th class="col-sm-3">link</th>
+                  <th class="col-sm-3">Update</th>
+                    <th class="col-sm-3">Delete</th>
+      </tr>
+    </thead>
+      <tbody>
+    {% for name in object_list %}
+        <tr>
+
+
+                       <td class="col-sm-3"><a href="http://127.0.0.1:8000/todolist/item/{{name.name}}">
+            {{ name.name }}</a>
+                </td>
+            <td class="col-sm-3" style="color: #2b542c">
+                {{ name.creation_date }}
+            </td>
+        <td  class="col-sm-3">
+            <a href="http://127.0.0.1:8000/todolist/itemshow/{{name.name}}" class="btn btn-info" role="button">Open</a>
+        </td>
+        <td  class="col-sm-3">
+            <a href="http://127.0.0.1:8000/todolist/update/{{name.id}}" class="btn btn-info" role="button">update</a>
+        </td>
+        <td  class="col-sm-3">
+            <a href="http://127.0.0.1:8000/todolist/delete/{{name.id}}" class="btn btn-info" role="button">delete</a>
+        </td>
+        </tr>
+    {% endfor %}
+
+ </tbody>
+  </table>
+   <a href="http://127.0.0.1:8000/todolist/create/" class="btn btn-info" role="button">create</a>
+</div>
+</div>
+</body>
+</html>
